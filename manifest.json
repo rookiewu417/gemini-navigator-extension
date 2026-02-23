@@ -1,0 +1,30 @@
+{
+    "manifest_version": 3,
+    "name": "Gemini Navigator",
+    "version": "1.0",
+    "description": "在 Gemini 对话中添加悬浮侧边栏，以便快速跳转到用户发送的每个问题。",
+    "permissions": [
+        "activeTab",
+        "scripting"
+    ],
+    "host_permissions": [
+        "https://gemini.google.com/*"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "https://gemini.google.com/*"
+            ],
+            "css": [
+                "styles.css"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "run_at": "document_idle"
+        }
+    ],
+    "action": {
+        "default_title": "Gemini Navigator"
+    }
+}
